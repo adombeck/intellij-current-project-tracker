@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>com.github.adombeck.currentprojecttracker</id>
+    <name>Current Project Tracker</name>
+    <vendor>Adrian Dombeck</vendor>
+    <description>
+        Writes the active IntelliJ project directory to ~/.cache/current-intellij-project
+        whenever a project window is focused, so external scripts can query it.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <applicationListeners>
+        <listener
+            class="com.github.adombeck.currentprojecttracker.ProjectWindowListener"
+            topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+    </applicationListeners>
+</idea-plugin>
